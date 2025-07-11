@@ -29,6 +29,6 @@ public class Payment
         ArgumentException.ThrowIfNullOrWhiteSpace(cvv);
         ArgumentOutOfRangeException.ThrowIfGreaterThan(cvv.Length, 3);
         
-        return new Payment(cardName, cardNumber, cvv, expiration, paymentMethod);
+        return new Payment(cardName, cardNumber, expiration, cvv, paymentMethod);
     }
 }

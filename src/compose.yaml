@@ -80,8 +80,21 @@
     restart: always
     ports:
       - "6379:6379"
-
+  orderdb:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: orderdb
+    platform: linux/amd64
+    environment:
+      - ACCEPT_EULA=1
+      - SA_PASSWORD=Welcome123@
+      - MSSQL_SA_PASSWORD=Welcome123@
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql-edge-data:/var/opt/mssql
+    
 volumes:
   postgres_catalog:
   postgres_basket:
-    
+  sql-edge-data:
