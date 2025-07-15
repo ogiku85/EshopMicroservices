@@ -41,11 +41,11 @@ public class Order : Aggregate<OrderId>
         return order;
     }
 
-    public void Update(OrderName orderName, Address shippingAddress, Payment payment, OrderStatus status)
+    public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus status)
     {
         OrderName = orderName;
         ShippingAddress = shippingAddress;
-        BillingAddress = shippingAddress;
+        BillingAddress = billingAddress;
         Payment = payment;
         Status = status;
         
